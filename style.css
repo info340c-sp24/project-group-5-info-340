@@ -1,3 +1,12 @@
+html{
+    height: 100%;
+    
+}
+main{
+    flex: 1;
+    height: 100%;
+}
+
 .container {
     color:cadetblue; 
     width: 100%;
@@ -9,10 +18,11 @@
 
 
 .header h1{   
-    font-size: 7em;
+    font-size: 5em;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 0;
-    padding-top: 0;
+    margin-top: 0;
+    color:cadetblue; 
 }
 
 .header p{
@@ -25,3 +35,50 @@
 body{
     background-color:cornsilk; 
 }
+
+section{
+    text-align: center;
+}
+
+section h3, h2{
+    font-size: 1.75rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section h4{
+    color:gold; 
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container section > section:nth-child(2){
+    flex: 1;
+    flex-basis: 0px;
+    background-color: #eee;
+}
+* {
+    box-sizing: border-box;
+}
+
+.column{
+    flex-basis: 240px;
+    padding: 1em;
+}
+
+.log{
+    background-color:white;
+    flex: 0 0 250px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    margin: 0.5rem;
+  }
+  .log p{
+    padding: 0.5rem 0.5rem;
+  }
+  
+  .log-container{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+  
