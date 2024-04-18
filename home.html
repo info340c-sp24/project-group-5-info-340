@@ -9,38 +9,51 @@
     <link rel="stylesheet" href="style.css">
     
 <body>
-    <header class="header">
-        <h1>Home</h1>
-        <h2>Hello User</h2>
-    </header>
-
-    <section>
-        
-        <h3>Medicine Intake Consistancy</h3>
-        <h4>50%</h4>
+    <section class="column">
+        <header class="header">
+            <div class="container">
+                <h1>Home</h1>
+                <p>Hello User</p>
+            </div>
+        </header>
     </section>
 
-    <section>
-        <h2>Today's Medications</h2>
+    <section class="column">
+        <div class="consistancy">
+            <h3>Medicine Intake Consistancy</h3>
+            <h4>50%</h4>
+        </div>
     </section>
-    
+
     <main>
-         <!-- Log 1 Example -->
-         <h2>1:00pm</h2>
-         <p>Medication #1 5mg</p>
-         
-         <!-- Log 2 Example -->
-         <h2>3:00pm</h2>
-         <p>Medication #2 10ml</p>
-         
-         <!-- Log 3 Example -->
-         <h2>5:00pm</h2>
-         <p>Medication #3 1 tablet</p>
-
-         <!-- Log 4 Example -->
-         <h2>8:00pm</h2>
-         <p>Medication #4 2 tablets</p>
-
+        <h2>Today's Medications</h2>
+        <section class="column"> 
+            <!-- Log 1 Example -->
+            <div class="log-cards">
+                <div class="log">
+                    <h2>1:00pm</h2>
+                    <p>Medication #1 5mg</p>
+                </div>
+                
+                <!-- Log 2 Example -->
+                <div class="log">
+                    <h2>3:00pm</h2>
+                    <p>Medication #2 10ml</p>
+                </div>
+                
+                <!-- Log 3 Example -->
+                <div class="log">
+                    <h2>5:00pm</h2>
+                    <p>Medication #3 1 tablet</p>
+                </div>
+    
+                <!-- Log 4 Example -->
+                <div class="log">
+                    <h2>8:00pm</h2>
+                    <p>Medication #4 2 tablets</p>
+                </div>
+            </div>
+        </section>
     </main>
     
 </body>
