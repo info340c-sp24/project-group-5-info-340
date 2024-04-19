@@ -1,14 +1,13 @@
-html{
+html {
     height: 100%;
-    
 }
-main{
+
+main {
     flex: 1;
     height: 100%;
 }
 
 .container {
-    color:cadetblue; 
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -16,69 +15,169 @@ main{
     margin-left: auto;
 }
 
-
-.header h1{   
-    font-size: 5em;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 0;
-    margin-top: 0;
-    color:cadetblue; 
+.container {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.header p{
+.container h1 {
+    font-size: 2.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px; 
+    margin-top: 0;
+    color: rgb(5, 69, 71);
+    padding-top: 7px;
+}
+
+.container p {
     font-size: 1.25rem;
     font-weight: 300;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 0;
+    margin-bottom: 0; 
+    color: rgb(38, 147, 152); 
+}
+body {
+    background-color: rgb(212, 243, 244);
 }
 
-body{
-    background-color:cornsilk; 
-}
-
-section{
+.consistancy{ 
     text-align: center;
 }
 
-section h3, h2{
+.consistancy h3{ 
     font-size: 1.75rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(5, 69, 71);
 }
 
-section h4{
-    color:gold; 
-    font-size: 1.5rem;
+.consistancy h4{
+    font-size: 1.25rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black; 
+    margin-bottom: 40px;
 }
 
-.container section > section:nth-child(2){
-    flex: 1;
-    flex-basis: 0px;
-    background-color: #eee;
-}
-* {
-    box-sizing: border-box;
+
+main {
+    text-align: center;
 }
 
-.column{
-    flex-basis: 240px;
-    padding: 1em;
+main h3{
+    font-size: 1.75rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(5, 69, 71);
 }
 
-.log{
-    background-color:white;
-    flex: 0 0 250px;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-    margin: 0.5rem;
-  }
-  .log p{
-    padding: 0.5rem 0.5rem;
-  }
-  
-  .log-container{
-    flex-wrap: wrap;
+
+/* Adjustments for the log cards container */
+.column {
     display: flex;
-    justify-content: center;
-  }
-  
+    justify-content: center; /* Center the log cards container */
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Adjustments for each log */
+.log {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0px 20px 20px; /* Adjust margin */
+    padding: 15px;
+    display: flex; /* Add flex display */
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space between elements */
+}
+
+.log img {
+    width: 80px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Add margin to separate from text */
+    float: left; /* Float the image to the left */
+}
+
+.log p, h2 {
+    margin: 0; /* Remove margin */
+    text-align: left; /* Align text to the left */
+    flex: 1; /* Let text take remaining space */
+}
+
+
+@media only screen and (max-width: 600px) {
+    .log {
+        flex-basis: calc(50% - 1rem);
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .log {
+        flex-basis: calc(33.33% - 1rem);
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+    .log {
+        flex-basis: calc(25% - 1rem);
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .log {
+        flex-basis: calc(20% - 1rem);
+    }
+}
+
+
+.log h2 {
+    margin-top: 0;
+}
+
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+}
+
+.menu li {
+    margin: 0 10px;
+    font-size: 1.25rem;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+}
