@@ -85,3 +85,13 @@ section h4{
 prof{
 text-align: center;
 }
+.profile-picture-container img {
+    max-width: 200px; /* Adjust the maximum width of the profile picture */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
