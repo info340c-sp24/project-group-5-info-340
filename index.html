@@ -4,70 +4,93 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Menu Bar</title>
-
+        <link rel="shortcut icon" type="image/png" href="image/favicon.png">
+        <link rel="stylesheet" href="style.css">
     </head>
-    <link rel="stylesheet" href="style.css">
+
+
 
     <body>
-        <h1>MedLog</h1>
-        <h2>Nurturing Wellness. One reminder at a Time</h2>
+        <header>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="medicinelog.html">Medicine Log</a></li>
+                    <li><a href="alarm.html">Alarm</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="medicinelog.html">Medicine Log</a></li>
-                <li><a href="alarm.html">Alarm</a></li>
-                <li><a href="profile.html">Profile</a></li>
 
-            </ul>
-        </nav>
 
-        <section class="column">
-            <header class="header">
-                <div class="container">
-                    <h1>Home</h1>
-                    <p>Hello User</p>
-                </div>
-            </header>
-        </section>
-
-        <section class="column">
-            <div class="consistancy">
-                <h3>Medicine Intake Consistancy</h3>
-                <h4>50%</h4>
+            <div class="container">
+                <h1>Home</h1>
+                <p>Hello User</p>
+                <a href="javascript:history.back()" class="back-button">Back</a>
             </div>
-        </section>
+
+
+        </header>
+
+        <div class="consistancy">
+            <h3>Your Consistancy</h3>
+            <h4>You have taken 50% of your medication!</h4>
+        </div>
+
 
         <main>
-            <h2>Today's Medications</h2>
+            <h3>Today's Medications</h3>
             <section class="column">
                 <!-- Log 1 Example -->
                 <div class="log-cards">
                     <div class="log">
-                        <h2>1:00pm</h2>
-                        <p>Medication #1 5mg</p>
+                        <img src="image/liquid.jpg" alt="liquid">
+                        <h2>10:00am</h2>
+                        <p>Omeprazole 5mg liquid</p>
                     </div>
 
                     <!-- Log 2 Example -->
                     <div class="log">
+                        <img src="image/Injection.png" alt="Injectiont">
                         <h2>3:00pm</h2>
-                        <p>Medication #2 10ml</p>
+                        <p>Morphine 5mg Injection</p>
                     </div>
 
                     <!-- Log 3 Example -->
                     <div class="log">
+                        <img src="image/capsule.jpg" alt="capsule">
                         <h2>5:00pm</h2>
-                        <p>Medication #3 1 tablet</p>
+                        <p>Tylenol 1 capsule</p>
                     </div>
 
                     <!-- Log 4 Example -->
                     <div class="log">
+                        <img src="image/tablets.png" alt="tablets">
                         <h2>8:00pm</h2>
-                        <p>Medication #4 2 tablets</p>
+                        <p>Hydrocodone 2 tablets</p>
                     </div>
+
+                    <div class="log">
+                        <img src="image/tablets.png" alt="tablets">
+                        <h2>8:00pm</h2>
+                        <p>Hydrocodone 2 tablets</p>
+                    </div>
+
+                    <div class="log">
+                        <img src="image/tablets.png" alt="tablets">
+                        <h2>8:00pm</h2>
+                        <p>Hydrocodone 2 tablets</p>
+                    </div>
+
+                    <div class="log">
+                        <img src="image/tablets.png" alt="tablets">
+                        <h2>8:45pm</h2>
+                        <p>Lisinopril 2 tablets</p>
+                    </div> <br><br><br>
+
+
                 </div>
             </section>
         </main>
     </body>
 </html>
-

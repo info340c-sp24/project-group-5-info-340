@@ -1,10 +1,18 @@
-html{
+html {
     height: 100%;
 
 }
-main{
+
+main {
     flex: 1;
     height: 100%;
+    text-align: center;
+}
+
+main h3{
+    font-size: 1.75rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(5, 69, 71);
 }
 
 .container {
@@ -25,49 +33,86 @@ main{
     color:cadetblue;
 }
 
-.header p{
+.container p {
     font-size: 1.25rem;
     font-weight: 300;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 7px;
+    color: rgb(38, 147, 152);
 }
 
 body{
     background-color:cornsilk;
 }
 
-section{
+.consistancy{
     text-align: center;
 }
 
-section h3, h2{
+.consistancy h3{
     font-size: 1.75rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(5, 69, 71);
 }
 
 section h4{
     color:gold;
     font-size: 1.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    margin-bottom: 40px;
 }
 
-.container section > section:nth-child(2){
-    flex: 1;
-    flex-basis: 0px;
-    background-color: #eee;
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+
+
 }
-* {
-    box-sizing: border-box;
+.menu{
+    justify-content: center;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    background-color: #ffffff;
+    width: 100%;
+    z-index: 9999;
+
+}
+.menu li {
+    margin: 0 10px;
+    font-size: 1.25rem;
+    text-align: center;
+
 }
 
-.column{
-    flex-basis: 240px;
-    padding: 1em;
+.menu li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.log{
-    background-color:white;
-    flex: 0 0 250px;
+.menu li a:hover {
+    color:cadetblue;
+}
+
+
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.log {
+    background-color: white;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
     margin: 0.5rem;
@@ -82,16 +127,3 @@ section h4{
     justify-content: center;
   }
 
-prof{
-text-align: center;
-}
-.profile-picture-container img {
-    max-width: 200px; /* Adjust the maximum width of the profile picture */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-}
