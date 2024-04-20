@@ -5,21 +5,25 @@ html {
 main {
     flex: 1;
     height: 100%;
+    text-align: center;
+}
+
+main h3{
+    font-size: 1.75rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(5, 69, 71);
 }
 
 .container {
+    background-color:rgb(7, 37, 38);
+    padding: 10px;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.container {
-    padding: 0 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin:0;
+
+    
 }
 
 .container h1 {
@@ -29,6 +33,7 @@ main {
     margin-top: 0;
     color: rgb(5, 69, 71);
     padding-top: 7px;
+
 }
 
 .container p {
@@ -37,8 +42,10 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 0;
     margin-bottom: 0; 
+    padding-bottom: 7px;
     color: rgb(38, 147, 152); 
 }
+
 body {
     background-color: rgb(212, 243, 244);
 }
@@ -61,91 +68,32 @@ body {
 }
 
 
-main {
-    text-align: center;
-}
-
-main h3{
-    font-size: 1.75rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:rgb(5, 69, 71);
-}
-
-
-/* Adjustments for the log cards container */
-.column {
-    display: flex;
-    justify-content: center; /* Center the log cards container */
-    align-items: flex-start; /* Align items to the top */
-}
-
-/* Adjustments for each log */
-.log {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0px 20px 20px; /* Adjust margin */
-    padding: 15px;
-    display: flex; /* Add flex display */
-    align-items: center; /* Center vertically */
-    justify-content: space-between; /* Space between elements */
-}
-
-.log img {
-    width: 80px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Add margin to separate from text */
-    float: left; /* Float the image to the left */
-}
-
-.log p, h2 {
-    margin: 0; /* Remove margin */
-    text-align: left; /* Align text to the left */
-    flex: 1; /* Let text take remaining space */
-}
-
-
-@media only screen and (max-width: 600px) {
-    .log {
-        flex-basis: calc(50% - 1rem);
-    }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-    .log {
-        flex-basis: calc(33.33% - 1rem);
-    }
-}
-
-@media only screen and (min-width: 901px) and (max-width: 1200px) {
-    .log {
-        flex-basis: calc(25% - 1rem);
-    }
-}
-
-@media only screen and (min-width: 1201px) {
-    .log {
-        flex-basis: calc(20% - 1rem);
-    }
-}
-
-
-.log h2 {
-    margin-top: 0;
-}
-
-
 .menu ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
+    list-style-type: none;
+
     
 }
-
+.menu{
+    justify-content: center;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    position: fixed; 
+    background-color: #ffffff;
+    width: 100%;
+    z-index: 9999;
+    
+}
 .menu li {
     margin: 0 10px;
     font-size: 1.25rem;
+    text-align: center;
+    
 }
 
 .menu li a {
@@ -156,28 +104,182 @@ main h3{
 }
 
 .menu li a:hover {
-    color: #333;
+    color:cadetblue;
 }
 
-@media only screen and (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+
+.column {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+}
+.log {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0px 20px 20px; 
+    padding: 15px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    border: 2px solid rgb(19, 94, 96) ;
+}
+
+.log img {
+    width: 80px; 
+    height: auto;
+    margin-right: 15px; 
+    float: left; 
+}
+
+.log p, h2 {
+    margin: 0; 
+    text-align: left; 
+    flex: 1; 
+}
+
+
+@media only screen and (max-width: 600px) {
+    .log {
+        flex-basis: calc(50% - 1rem);
     }
 
-    .menu {
-        display: none;
+    .alarm {
+        width: 90%;
     }
+    
+    .alarm h2 {
+        font-size: 24px; 
+    }
+    
+    .alarm p {
+        font-size: 16px; 
+    }
+}
 
-    .menu.active {
-        display: block;
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .log {
+        flex-basis: calc(33.33% - 1rem);
     }
+    .alarm {
+        width: 70%;
+      }
+    
+    .alarm h2 {
+        font-size: 28px; 
+    }
+    
+    .alarm p {
+        font-size: 18px; 
+    }
+}
 
-    .menu ul {
-        flex-direction: column;
-        align-items: center;
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+    .log {
+        flex-basis: calc(25% - 1rem);
     }
+    .alarm {
+        width: 50%;
+    }
+    
+    .alarm h2 {
+        font-size: 32px; 
+    }
+    
+    .alarm p {
+        font-size: 20px; 
+    }
+}
 
-    .menu li {
-        margin: 10px 0;
+@media only screen and (min-width: 1201px) {
+    .log {
+        flex-basis: calc(20% - 1rem);
     }
+    .alarm {
+        width: 40%;
+    }
+    .alarm h2 {
+        font-size: 36px; 
+    }
+    .alarm p {
+        font-size: 22px; 
+    }
+}
+
+.log h2 {
+    margin-top: 0;
+}
+
+.add-alarm {
+    position: fixed; 
+    right: 20px; 
+    bottom: 20px; 
+}
+
+.add-alarm button {
+    background-color: #ffffff; 
+    color: rgb(5, 69, 71); 
+    border: 2px solid #000000; 
+    border-radius: 50%; 
+    width: 60px; 
+    height: 60px; 
+    font-size: 24px; 
+    cursor: pointer; 
+}
+
+.add-alarm button:hover {
+    background-color: rgba(0, 0, 0, 0.221); 
+}
+
+.alarm-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    padding-right: 120px;
+}
+
+.alarm {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0px 20px 20px; 
+    padding: 10px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    width: 150%; 
+}
+
+.alarm h2 {
+    margin: 0; 
+    text-align: left; 
+}
+
+.alarm p {
+    margin: 0;
+    text-align: left; 
+}
+.alarm p:nth-child(2) {
+    font-size: 1.25rem;
+}
+
+.alarm p:nth-child(3){
+    font-size: 1rem;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    position: fixed;
+    top: 20px;
+    right: 20px; 
+
+}
+
+.back-button:hover {
+    background-color: rgb(5, 69, 71);; /* Darker blue background color on hover */
 }
