@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="Eric, Parshvi, Neda">
+    <meta name="MedLog" content="MedLog App">
+    <link rel="icon" href="image/Icon.png">
+   <title>Menu Bar</title>
+   <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+   <header>
+       <nav class="menu">
+           <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="medicinelog.html">Medicine Log</a></li>
+               <li><a href="alarm.html">Alarm</a></li>
+               <li><a href="profile.html">Profile</a></li>
+           </ul>
+       </nav>
+
+
+       <div class="container">
+           <h1>Medicine Log</h1>
+           <a href="javascript:history.back()" class="back-button">Back</a>
+       </div>
+   </header>
+
+
+   <main>
+       <h1 class="med-date">Saturday April 20</h1>
+       <div class="calendar">
+           <div class="day">
+               <p>Mon</p>
+           </div>
+           <div class="day">
+               <p>Tues</p>
+           </div>
+           <div class="day">
+               <p>Wed</p>
+           </div>
+           <div class="day">
+               <p>Thur</p>
+           </div>
+           <div class="day">
+               <p>Fri</p>
+           </div>
+           <div class="day-sat">
+               <p>Sat</p>
+           </div>
+           <div class="day">
+               <p>Sun</p>
+           </div>
+       </div>
+
+
+       <a href="medication.html" class="add-alarm" aria-label="Add Medication">
+           <button>+</button>
+       </a>
+
+
+       <h3>Your Medications</h3>
+       <section class="column">
+           <div>
+               <div class="log">
+                   <img src="image/liquid.jpg" alt="liquid">
+                   <h2>10:00am</h2>
+                   <p>Omeprazole 5mg liquid</p>
+               </div>
+               <div class="log">
+                   <img src="image/Injection.png" alt="Injection">
+                   <h2>3:00pm</h2>
+                   <p>Morphine 5mg Injection</p>
+               </div>
+               <div class="log">
+                   <img src="image/capsule.jpg" alt="capsule">
+                   <h2>5:00pm</h2>
+                   <p>Tylenol 1 capsule</p>
+               </div>
+               <div class="log">
+                   <img src="image/tablets.png" alt="tablets">
+                   <h2>8:00pm</h2>
+                   <p>Hydrocodone 2 tablets</p>
+               </div>
+           </div>
+       </section>
+
+
+       <h3>Your Past Medication</h3>
+       <section class="column">
+           <div>
+               <div class="log">
+                   <img src="image/liquid.jpg" alt="liquid">
+                   <h2>12:00pm</h2>
+                   <p>Penicillin 5mg liquid</p>
+               </div>
+               <div class="log">
+                   <img src="image/capsule.jpg" alt="capsule">
+                   <h2>7:00pm</h2>
+                   <p>Prozac 2 capsule</p>
+               </div>
+               <div class="bottom-padding"></div>
+           </div>
+       </section>
+   </main>
+</body>
+<footer>
+    <div class="copyright">
+        <p>&copy; MedLog 2024</p>
+    </div>
+</footer>
+</html>
+
