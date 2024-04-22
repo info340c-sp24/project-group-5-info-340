@@ -1,37 +1,54 @@
 html {
     height: 100%;
-
 }
+
 
 main {
     flex: 1;
     height: 100%;
     text-align: center;
+    padding: 100px;
+    flex: 1;
 }
 
-main h3{
+
+main h3 {
     font-size: 1.75rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:rgb(5, 69, 71);
+    color: rgb(5, 69, 71);
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
 
 .container {
-    color:cadetblue;
+    background-color: rgb(7, 37, 38);
+    padding: 10px;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    position: fixed;
 }
 
 
-.header h1{
-    font-size: 5em;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 0;
+.container h1 {
+    font-size: 2.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
     margin-top: 0;
-    color:cadetblue;
+    color: rgb(152, 247, 250);
+    padding-top: 7px;
+
+
 }
+
 
 .container p {
     font-size: 1.25rem;
@@ -40,30 +57,36 @@ main h3{
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 7px;
-    color: rgb(38, 147, 152);
+    color: rgb(250, 250, 250);
 }
 
-body{
-    background-color:cornsilk;
+
+body {
+    background-color: rgb(212, 243, 244);
 }
 
-.consistancy{
+
+.consistancy {
     text-align: center;
+    z-index: 0;
 }
 
-.consistancy h3{
+
+.consistancy h3 {
     font-size: 1.75rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:rgb(5, 69, 71);
+    color: rgb(5, 69, 71);
 }
 
-section h4{
-    color:gold;
-    font-size: 1.5rem;
+
+.consistancy h4 {
+    font-size: 1.25rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     margin-bottom: 40px;
 }
+
+
 
 
 .menu ul {
@@ -74,7 +97,8 @@ section h4{
 
 
 }
-.menu{
+
+.menu {
     justify-content: center;
     margin: 0;
     padding: 15px;
@@ -85,45 +109,232 @@ section h4{
     background-color: #ffffff;
     width: 100%;
     z-index: 9999;
-
+    display: flex;
+    flex-direction: row;
+    margin: 0;
 }
+
 .menu li {
     margin: 0 10px;
     font-size: 1.25rem;
     text-align: center;
-
 }
+
 
 .menu li a {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-weight: bold;
     transition: color 0.3s;
+    display: block;
+
 }
 
+
 .menu li a:hover {
-    color:cadetblue;
+    color: cadetblue;
 }
 
 
 .column {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+
 }
+
 .log {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-    margin: 0.5rem;
-  }
-  .log p{
-    padding: 0.5rem 0.5rem;
-  }
-
-  .log-container{
-    flex-wrap: wrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0px 20px 20px;
+    padding: 15px;
     display: flex;
-    justify-content: center;
-  }
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid rgb(19, 94, 96);
 
+}
+
+.log img {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    float: left;
+}
+
+.log p,
+h2 {
+    margin: 0;
+    text-align: left;
+    flex: 1;
+}
+
+@media (max-width: 597px) {
+    .log {
+        flex-basis: calc(33.33% - 1rem);
+    }
+
+    .alarm {
+        width: 70%;
+    }
+
+    .alarm h2 {
+        font-size: 28px;
+    }
+
+    .alarm p {
+        font-size: 18px;
+    }
+
+    .menu {
+        height: 30px;
+    }
+
+    .menu ul {
+        padding-right: 20px;
+
+
+    }
+
+    .menu li {
+        font-size: 1.25rem;
+    }
+
+    img {
+        display: none;
+    }
+}
+
+@media(min-width: 992px) {
+    .log {
+        flex-basis: calc(25% - 1rem);
+    }
+
+    .alarm {
+        width: 50%;
+    }
+
+    .alarm h2 {
+        font-size: 32px;
+    }
+
+    .alarm p {
+        font-size: 20px;
+    }
+
+    .menu {
+        height: 10px;
+    }
+
+    .clock {
+        top: 20%;
+        left: 8%;
+        max-width: 250px;
+        max-height: 250px;
+        position: absolute;
+        z-index: -10;
+
+    }
+}
+
+.log h2 {
+    margin-top: 0;
+}
+
+
+.add-alarm {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    z-index: 9999;
+}
+
+
+.add-alarm button {
+    background-color: #ffffff;
+    color: rgb(5, 69, 71);
+    border: 2px solid #000000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+
+}
+
+
+.add-alarm button:hover {
+    background-color: rgba(0, 0, 0, 0.221);
+}
+
+
+.alarm-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 120px;
+}
+
+
+.alarm {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0px 20px 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 150%;
+    border: 2px solid rgb(19, 94, 96);
+}
+
+
+.alarm h2 {
+    margin: 0;
+    text-align: left;
+}
+
+
+.alarm p {
+    margin: 0;
+    text-align: left;
+}
+
+.alarm p:nth-child(2) {
+    font-size: 1.25rem;
+}
+
+
+.alarm p:nth-child(3) {
+    font-size: 1rem;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+
+}
+
+
+.back-button:hover {
+    background-color: rgb(5, 69, 71);
+    ;
+    /* Darker blue background color on hover */
+}
+
+footer {
+    z-index: 999;
+    padding-bottom: 50px;
+
+}
