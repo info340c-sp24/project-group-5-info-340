@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "medlog-68fbc"
+  }
+}
