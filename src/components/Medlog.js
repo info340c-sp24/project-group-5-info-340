@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export function Calendar(props) {
     return (
@@ -32,17 +32,17 @@ export function Calendar(props) {
     )
 }
 
-export function AddMed(props) {
-    return (
-        <Link to="/MedlogForm" className="add-alarm" aria-label="Add Medication">
-            {/* /MedlogForm needs to be propery routed */}
-            <button>+</button>
-        </Link>
-    )
-}
-            {/* <a href="medication.html" className="add-alarm" aria-label="Add Medication">
-                <button>+</button>
-            </a> */}
+// export function AddMed(props) {
+//     return (
+//         <Link to="/MedlogForm" className="add-alarm" aria-label="Add Medication">
+//             {/* /MedlogForm needs to be propery routed */}
+//             <button>+</button>
+//         </Link>
+//     )
+// }
+//             {/* <a href="medication.html" className="add-alarm" aria-label="Add Medication">
+//                 <button>+</button>
+//             </a> */}
 
 export function CurrentMed(props) {
     return (
