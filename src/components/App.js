@@ -11,25 +11,22 @@ import SignUp from './SignUp.js';
 import '../index.js';
 
 
-
-
-export function App(props) {
-  return (
-    <Router>
-      <div className="container">
-        <Header />
-        <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Medlog" element={<MedPage />} />
-          <Route path="/Alarm" element={<Alarm />} />
-          <Route path="/LogIn" element={<Login />} />
-          <Route path="/SignUp" element={<SignUp />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
-  );
+export function App(props){
+    return(
+        <Router>
+            <div className="container">
+                <Header />
+                <Routes>
+                    <Route path="/Home" element={<Home />} />
+                    <Route path="/Medlog" element={<MedPage />} />
+                    <Route path="/Alarm" element={<Alarm />} />
+                    <Route path="/LogIn" element={<Login />} />
+                    <Route path="/SignUp" element={<SignUp />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
-
 
 export default App;
