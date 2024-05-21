@@ -11,15 +11,8 @@ import SignUp from './SignUp.js';
 import '../index.js';
 
 
-<<<<<<< HEAD
-
-
-export function App(props) {
-    return (
-=======
 export function App(props){
     return(
->>>>>>> main
         <Router>
             <div className="container">
                 <Header />
@@ -36,9 +29,4 @@ export function App(props){
     );
 }
 
-<<<<<<< HEAD
-
-export default App;
-=======
 export default App; 
->>>>>>> main
