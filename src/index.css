@@ -1,4 +1,4 @@
-git html {
+html {
     height: 100%;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 
-body {
+.background {
     background-color: rgb(212, 243, 244);
 }
 
