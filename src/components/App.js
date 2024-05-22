@@ -28,7 +28,7 @@ export function App(props) {
                     <Route path="/SignUp" element={<SignUp />} />
                     <Route path="/MedlogForm" element={<MedForm />} />
                     <Route path="/Profile" element={<Profile />} />
-                    <Route path="/" element={<Navigate to="/Profile" />} />
+                    <Route path="/" element={<Navigate to="/Login" />} />
                 </Routes>
                 <Footer />
             </div>
