@@ -11,6 +11,8 @@ main {
 }
 
 
+
+
 main h3 {
     font-size: 1.75rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -71,12 +73,18 @@ main h3 {
 }
 
 
+
+
 .consistancy h4 {
     font-size: 1.25rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     margin-bottom: 40px;
 }
+
+
+
+
 
 
 
@@ -88,7 +96,10 @@ main h3 {
     list-style-type: none;
 
 
+
+
 }
+
 
 .menu {
     justify-content: center;
@@ -132,6 +143,7 @@ main h3 {
     align-items: center;
 }
 
+
 .log {
     background-color: white;
     border-radius: 10px;
@@ -143,6 +155,7 @@ main h3 {
     justify-content: space-between;
     border: 2px solid rgb(19, 94, 96);
 }
+
 
 .log img {
     width: 80px;
@@ -251,6 +264,7 @@ main h3 {
 
 
 }
+
 
 .profile-form {
     padding-top: 150px;

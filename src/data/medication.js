@@ -1,4 +1,4 @@
-[
+export const Data = [
     { "id": 1, "name": "Aspirin" },
     { "id": 2, "name": "Ibuprofen" },
     { "id": 3, "name": "Paracetamol" },
@@ -49,5 +49,4 @@
     { "id": 48, "name": "Allopurinol" },
     { "id": 49, "name": "Atenolol" },
     { "id": 50, "name": "Fexofenadine" }
-]
-  
+];
