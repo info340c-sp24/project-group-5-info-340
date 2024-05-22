@@ -36,7 +36,7 @@ export default function MedPage(props) {
             <div>
                 <a href="/MedlogForm" className="add-alarm" aria-label="Add Medication">
                     <button>+</button>
-                </a> 
+                </a>
             </div>
 
             {/* Current Medication */}
@@ -99,7 +99,7 @@ export default function MedPage(props) {
 //         // </Link>
 //         <a href="/MedlogForm" className="add-alarm" aria-label="Add Medication">
 //             <button>+</button>
-//         </a> 
+//         </a>
 //     )
 // }
 

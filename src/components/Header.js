@@ -11,7 +11,7 @@ function Header() {
                         <li><Link to="/home">Home</Link></li>
                         <li><Link to="/MedLog">Medicine Log</Link></li>
                         <li><Link to="/Alarm">Alarm</Link></li>
-                        <li><Link to="/Profile">Sign In</Link></li>
+                        <li><Link to="/LogIn">Account</Link></li>
                     </ul>
                 </nav>
             </header>
