@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 function Login() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
@@ -25,7 +25,7 @@ function Login() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Logged in successfully
-        history.push('/profile');
+        navigate('/profile');
       })
       .catch((error) => {
         alert(error.message);

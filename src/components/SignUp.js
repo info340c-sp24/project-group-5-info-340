@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 function SignUp() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [signUpData, setSignUpData] = useState({
     email: '',
     password: '',
@@ -31,7 +31,7 @@ function SignUp() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed up successfully
-        history.push('/profile');
+        navigate('/profile');
       })
       .catch((error) => {
         alert(error.message);
@@ -53,7 +53,7 @@ function SignUp() {
 
         <button type="submit">Sign Up</button>
       </form>
-      <a href="/login">Already have an account? Login here</a>
+      <p>Already have an account? <Link to="/login">Login here</Link></p>
     </div>
   );
 }
