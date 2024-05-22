@@ -2,7 +2,6 @@ html {
     height: 100%;
 }
 
-
 main {
     flex: 1;
     height: 100%;
@@ -20,17 +19,14 @@ main h3 {
     color: rgb(5, 69, 71);
 }
 
-
 .background {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     background-color: rgb(212, 243, 244);
+    
 }
-
-
-
 
 
 
@@ -46,7 +42,6 @@ main h3 {
     z-index: 5;
 }
 
-
 .container h1 {
     font-size: 2.5em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -55,7 +50,6 @@ main h3 {
     color: rgb(152, 247, 250);
     padding-top: 7px;
 }
-
 
 .container p {
     font-size: 1.25rem;
@@ -67,12 +61,10 @@ main h3 {
     color: rgb(250, 250, 250);
 }
 
-
 .consistancy {
     text-align: center;
     z-index: 0;
 }
-
 
 .consistancy h3 {
     font-size: 1.75rem;
@@ -123,14 +115,14 @@ main h3 {
     display: flex;
     flex-direction: row;
     margin: 0;
-}
-
-.menu li {
+ }
+ 
+ 
+ .menu li {
     margin: 0 10px;
     font-size: 1.25rem;
     text-align: center;
 }
-
 
 .menu li a {
     text-decoration: none;
@@ -140,11 +132,9 @@ main h3 {
     display: block;
 }
 
-
 .menu li a:hover {
     color: cadetblue;
 }
-
 
 .column {
     display: flex;
@@ -172,20 +162,19 @@ main h3 {
     height: auto;
     margin-right: 15px;
     float: left;
-}
-
-.log p,
-h2 {
+ }
+ 
+ 
+ .log p,
+ h2 {
     margin: 0;
     text-align: left;
     flex: 1;
 }
 
-
 .log h2 {
     margin-top: 0;
 }
-
 
 .add-alarm {
     position: fixed;
@@ -193,7 +182,6 @@ h2 {
     bottom: 80px;
     z-index: 9999;
 }
-
 
 .add-alarm button {
     background-color: #ffffff;
@@ -206,11 +194,9 @@ h2 {
     cursor: pointer;
 }
 
-
 .add-alarm button:hover {
     background-color: rgba(0, 0, 0, 0.221);
 }
-
 
 .alarm-column {
     display: flex;
@@ -219,7 +205,6 @@ h2 {
     align-items: center;
     padding-right: 120px;
 }
-
 
 .alarm {
     background-color: white;
@@ -234,28 +219,27 @@ h2 {
     border: 2px solid rgb(19, 94, 96);
 }
 
-
 .alarm h2 {
     margin: 0;
     text-align: left;
 }
 
-
 .alarm p {
     margin: 0;
     text-align: left;
-}
-
-.alarm p:nth-child(2) {
+ }
+ 
+ 
+ .alarm p:nth-child(2) {
     font-size: 1.25rem;
 }
 
-
 .alarm p:nth-child(3) {
     font-size: 1rem;
-}
-
-.back-button {
+ }
+ 
+ 
+ .back-button {
     display: inline-block;
     padding: 10px 20px;
     color: #ffffff;
@@ -266,21 +250,15 @@ h2 {
     right: 20px;
 }
 
-
 .back-button:hover {
     background-color: rgb(5, 69, 71);
     ;
     /* Darker blue background color on hover */
 }
 
-
 .footer {
     z-index: 999;
     padding-bottom: 50px;
-
-
-
-
 
 
 
@@ -293,80 +271,91 @@ h2 {
     font-size: 1.2rem;
     color: rgb(5, 69, 71);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.profile-picture-container {
+ }
+ 
+ 
+ .profile-picture-container {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    position: relative;
+    position: relative; 
     z-index: 0;
     display: inline-block;
     position: absolute;
     top: 20%;
-    right: 3%;
+    right: 3%; 
+    
 
-
-}
-
-.t-box {
+    
+ }
+ 
+ 
+ .t-box {
     size: 5px;
-}
-
-.profile-picture-container img {
+ }
+ 
+ 
+ .profile-picture-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 1;
-}
-
-@media (max-width: 597px) {
-    profile-picture-container img {
+ }
+ 
+ 
+ @media (max-width: 597px) {
+     profile-picture-container img {
         width: 10%;
         height: 10%;
         object-fit: cover;
         z-index: 1;
         right: 5%;
-    }
-
+     } 
     .med-form {
         text-align: left;
         display: inline-block;
         font-size: 1.5rem;
     }
-
+ 
+ 
     .med-form label {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
-
+ 
+ 
     .med-form label.med-title {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 2rem;
         color: rgb(5, 69, 71);
     }
-
+ 
+ 
     input[type="text"] {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
-
+ 
+ 
     .med-form .t-box {
         width: 200px;
         height: 35px;
         font-size: 1.5rem;
     }
-
+ 
+ 
     .form-padding {
         padding-bottom: 15px;
     }
-
+ 
+ 
     .bottom-padding {
         padding-bottom: 50px;
     }
-
+ 
+ 
     .med-image {
         display: flex;
         max-height: 200x;
@@ -380,13 +369,13 @@ h2 {
         text-align: left;
     }
 
-
     .calendar {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-
+ 
+ 
     .day {
         width: 75px;
         height: 100px;
@@ -400,7 +389,8 @@ h2 {
         border-radius: 20px;
         font-size: 1.5rem;
     }
-
+ 
+ 
     .day-sat {
         color: white;
         background-color: rgb(7, 37, 38);
@@ -422,21 +412,23 @@ h2 {
         align-items: center;
         /* Add this */
     }
-
+ 
+ 
     .day p {
         margin-top: 70px;
     }
-
+ 
+ 
     .day-sat p {
         margin-top: 70px;
     }
-
+ 
+ 
     .med-date {
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
-
 
     .profile-form {
         padding-top: 150px;
@@ -444,42 +436,37 @@ h2 {
         padding-bottom: 20px;
     }
 
-
+   
+ 
     .log {
         flex-basis: calc(33.33% - 1rem);
     }
-
 
     .alarm {
         width: 70%;
     }
 
-
     .alarm h2 {
         font-size: 28px;
     }
-
 
     .alarm p {
         font-size: 18px;
     }
 
-
     .menu {
         height: 30px;
     }
-
 
     .menu ul {
         padding-right: 20px;
     }
 
-
     .menu li {
         font-size: 1.25rem;
     }
 
-
+    
     .clock {
         display: flex;
         max-width: 100px;
@@ -496,45 +483,50 @@ h2 {
 }
 
 
-
-
 @media (min-width: 992px) {
     .med-form {
         text-align: left;
         font-size: 1.5rem;
         padding-left: 8rem;
     }
-
+ 
+ 
     .med-form label {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
-
+ 
+ 
     .med-form label.med-title {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 2rem;
         color: rgb(5, 69, 71);
     }
-
+ 
+ 
     input[type="text"] {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
-
+ 
+ 
     .med-form .t-box {
         width: 200px;
         height: 35px;
         font-size: 1.5rem;
     }
-
+ 
+ 
     .form-padding {
         padding-bottom: 20px;
     }
-
+ 
+ 
     .bottom-padding {
         padding-bottom: 50px;
     }
-
+ 
+ 
     .med-image {
         max-height: 500px;
         max-width: 500px;
@@ -543,13 +535,15 @@ h2 {
         top: 20%;
         right: 7%;
     }
-
+ 
+ 
     .calendar {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-
+ 
+ 
     .day {
         width: 100px;
         height: 200px;
@@ -563,7 +557,8 @@ h2 {
         border-radius: 20px;
         font-size: 1.5rem;
     }
-
+ 
+ 
     .day-sat {
         color: white;
         background-color: rgb(7, 37, 38);
@@ -579,45 +574,44 @@ h2 {
         font-size: 1.5rem;
         margin-bottom: 10px;
     }
-
+ 
+ 
     .day p {
         margin-top: 70px;
     }
-
+ 
+ 
     .day-sat p {
         margin-top: 70px;
     }
-
+ 
+ 
     .med-date {
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
-
+ 
+ 
     .log {
         flex-basis: calc(25% - 1rem);
     }
-
 
     .alarm {
         width: 150%;
     }
 
-
     .alarm h2 {
         font-size: 32px;
     }
-
 
     .alarm p {
         font-size: 20px;
     }
 
-
     .menu {
         height: 10px;
     }
-
 
     .clock {
         top: 20%;
@@ -628,17 +622,21 @@ h2 {
         z-index: 1;
     }
 
-
     .profile-form {
         padding-left: 10px;
     }
-}
-
-.form {
-    padding-top: 150px;
-    justify-content: center;
-    text-align: center;
-    color: rgb(5, 69, 71);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2rem;
-}
+ }
+ 
+ 
+ .form{
+ padding-top: 150px;
+ justify-content: center;
+ text-align:  center;
+ color: rgb(5, 69, 71);
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-size: 1.2rem;
+ 
+ 
+ }
+ 
+ 

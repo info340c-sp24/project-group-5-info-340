@@ -9,6 +9,9 @@ import Alarm from './Alarm.js';
 import Login from './LogIn.js';
 import SignUp from './SignUp.js';
 import MedForm from './MedlogForm.js';
+import Profile from './Profile.js';
+
+
 import '../index.js';
 
 
@@ -24,6 +27,7 @@ export function App(props){
                     <Route path="/LogIn" element={<Login />} />
                     <Route path="/SignUp" element={<SignUp />} />
                     <Route path="/MedlogForm" element={<MedForm />} />
+                    <Route path="/Profile" element={<Profile />} />
                 </Routes>
                 <Footer />
             </div>
@@ -31,4 +35,4 @@ export function App(props){
     );
 }
 
-export default App; 
+export default App;

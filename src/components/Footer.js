@@ -3,8 +3,10 @@ import '../index';
 
 function Footer() {
     return (
-        <div class="copyright">
-            <p>&copy; MedLog 2024</p>
+        <div className="footer">
+            <div className="copyright">
+                <p>&copy; MedLog 2024</p>
+            </div>
         </div>
     );
 }
