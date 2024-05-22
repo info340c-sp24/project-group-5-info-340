@@ -11,7 +11,7 @@ import React from 'react';
 
 
 
-export function MedForm(props) {
+export default function MedForm(props) {
     return (
         <div>
             {/* Form */}

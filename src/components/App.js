@@ -14,7 +14,7 @@ import '../index.js';
 export function App(props){
     return(
         <Router>
-            <div className="container">
+            <div>
                 <Header />
                 <Routes>
                     <Route path="/Home" element={<Home />} />

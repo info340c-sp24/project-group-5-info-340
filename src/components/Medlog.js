@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export function MedPage(props) {
+export default function MedPage(props) {
     return (
         <div>
             {/* Calendar */}
