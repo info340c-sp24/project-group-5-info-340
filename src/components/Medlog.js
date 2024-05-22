@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export function MedPage(props) {
+export default function MedPage(props) {
     return (
         <div>
             {/* Calendar */}
@@ -36,7 +36,7 @@ export function MedPage(props) {
             <div>
                 <a href="/MedlogForm" className="add-alarm" aria-label="Add Medication">
                     <button>+</button>
-                </a> 
+                </a>
             </div>
 
             {/* Current Medication */}
@@ -99,7 +99,7 @@ export function MedPage(props) {
 //         // </Link>
 //         <a href="/MedlogForm" className="add-alarm" aria-label="Add Medication">
 //             <button>+</button>
-//         </a> 
+//         </a>
 //     )
 // }
 

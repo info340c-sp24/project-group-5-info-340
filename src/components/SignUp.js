@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
-function SignUp() {
+export default function SignUp(props) {
   const navigate = useNavigate();
-  const [signUpData, setSignUpData] = useState({
+  const [SignUpData, setSignData] = useState({
     email: '',
     password: '',
-    confirmPassword: '',
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setSignUpData((prevData) => ({
+    setSignData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
@@ -21,17 +20,12 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const auth = getAuth();
-    const { email, password, confirmPassword } = signUpData;
+    const { email, password } = SignUpData;
 
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed up successfully
-        navigate('/profile');
+        // Signed in successfully
+        navigate('/Profile');
       })
       .catch((error) => {
         alert(error.message);
@@ -39,23 +33,25 @@ function SignUp() {
   };
 
   return (
-    <div className="signup-form">
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" value={signUpData.email} onChange={handleChange} required />
+    <div className='background'>
+      <header>
+        <div class="container">
+          <h1>Sign Up</h1>
+          <p>Create your account!</p>
+          <a href="javascript:history.back()" class="back-button">Back</a>
+        </div>
 
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" value={signUpData.password} onChange={handleChange} required />
+      </header>
+      <form className="form" onSubmit={handleSubmit}>
+        <label htmlFor="email">Email Address: </label>
+        <input type="text" id="email" name="email" value={SignUpData.email} onChange={handleChange} required /><br /><br />
 
-        <label htmlFor="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirmPassword" value={signUpData.confirmPassword} onChange={handleChange} required />
+        <label htmlFor="password">Password: </label>
+        <input type="password" id="password" name="password" value={SignUpData.password} onChange={handleChange} required /><br /><br />
 
-        <button type="submit">Sign Up</button>
+        <Link to="/Profile" className='submit' aria-label='Submit Button'><button>Submit</button></Link>
+        {/* <button className="SignUp" type="submit">Submit</button> */}
       </form>
-      <p>Already have an account? <Link to="/login">Login here</Link></p>
     </div>
   );
 }
-
-export default SignUp;
