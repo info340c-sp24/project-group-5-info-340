@@ -23,7 +23,10 @@ main h3 {
     min-height: 100vh;
     margin: 0;
     background-color: rgb(212, 243, 244);
+    
 }
+
+
 
 .container {
     background-color: rgb(7, 37, 38);
@@ -263,12 +266,15 @@ main h3 {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    /* position: relative; */
+    position: relative; 
     z-index: 0;
     display: inline-block;
     position: absolute;
-    top: 15%;
-    right: 3%;
+    top: 20%;
+    right: 3%; 
+    
+
+    
  }
  
  
@@ -286,6 +292,13 @@ main h3 {
  
  
  @media (max-width: 597px) {
+     profile-picture-container img {
+        width: 10%;
+        height: 10%;
+        object-fit: cover;
+        z-index: 1;
+        right: 5%;
+     } 
     .med-form {
         text-align: left;
         display: inline-block;
@@ -404,11 +417,12 @@ main h3 {
     }
 
     .profile-form {
-        padding-top: 20px;
+        padding-top: 150px;
         padding-left: 20px;
         padding-bottom: 20px;
     }
- 
+
+   
  
     .log {
         flex-basis: calc(33.33% - 1rem);
@@ -438,10 +452,7 @@ main h3 {
         font-size: 1.25rem;
     }
 
-    img {
-        display: none;
-    }
-
+    
     .clock {
         display: flex;
         max-width: 100px;
@@ -456,6 +467,7 @@ main h3 {
         padding-left: 50px;
     }
 }
+
 
 @media (min-width: 992px) {
     .med-form {

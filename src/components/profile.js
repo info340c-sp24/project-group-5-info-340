@@ -5,7 +5,7 @@ export default function Profile() {
   return (
     <div className='background'>
       <div className="profile-picture-container">
-        <img id="profileImage" src="image/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="Profile Picture" />
+        <img src="image/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="Profile Picture" />
       </div>
       <header>
 
