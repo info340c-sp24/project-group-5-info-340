@@ -1,6 +1,6 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Redirect , Navigate} from 'react-router-dom';
 import Home from './Home.js';
 import Footer from './Footer.js';
 import Header from './Header.js';
@@ -15,8 +15,8 @@ import Profile from './Profile.js';
 import '../index.js';
 
 
-export function App(props){
-    return(
+export function App(props) {
+    return (
         <Router>
             <div>
                 <Header />
@@ -28,6 +28,7 @@ export function App(props){
                     <Route path="/SignUp" element={<SignUp />} />
                     <Route path="/MedlogForm" element={<MedForm />} />
                     <Route path="/Profile" element={<Profile />} />
+                    <Route path="/" element={<Navigate to="/Profile" />} />
                 </Routes>
                 <Footer />
             </div>
