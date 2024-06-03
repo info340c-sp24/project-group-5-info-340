@@ -1,57 +1,80 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { auth, db } from '../components/firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 
-export default function SignUp(props) {
+const SignUp = () => {
   const navigate = useNavigate();
-  const [SignUpData, setSignData] = useState({
+  const [signUpData, setSignUpData] = useState({
+    name: '',
     email: '',
     password: '',
   });
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setSignData((prevData) => ({
+    setSignUpData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const auth = getAuth();
-    const { email, password } = SignUpData;
+    const { email, password, name } = signUpData;
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in successfully
-        navigate('/Profile');
-      })
-      .catch((error) => {
-        alert(error.message);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log('User created:', user);
+
+      await setDoc(doc(db, 'users', user.uid), {
+        name,
+        email,
       });
+
+      console.log('User document created in Firestore');
+      navigate('/Profile'); // Redirect to profile page after successful signup
+    } catch (error) {
+      console.error('Error during signup:', error);
+
+      if (error.code === 'auth/email-already-in-use') {
+        setError('This email address is already in use.');
+      } else {
+        setError('An error occurred. Please try again.');
+      }
+    }
   };
 
   return (
-    <div className='background'>
-      <header>
-        <div class="container">
-          <h1>Sign Up</h1>
-          <p>Create your account!</p>
-          <a href="javascript:history.back()" class="back-button">Back</a>
-        </div>
+    <div className="auth-background">
+      <div className="auth-card">
+        <header>
+          <div className="auth-container">
+            <h1>Sign Up</h1>
+            <p>Create your account!</p>
+            <button className="back-button" onClick={() => navigate(-1)}>Back</button>
+          </div>
+        </header>
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <label htmlFor="name">Full Name: </label>
+          <input type="text" id="name" name="name" value={signUpData.name} onChange={handleChange} required />
 
-      </header>
-      <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email Address: </label>
-        <input type="text" id="email" name="email" value={SignUpData.email} onChange={handleChange} required /><br /><br />
+          <label htmlFor="email">Email Address: </label>
+          <input type="email" id="email" name="email" value={signUpData.email} onChange={handleChange} required />
 
-        <label htmlFor="password">Password: </label>
-        <input type="password" id="password" name="password" value={SignUpData.password} onChange={handleChange} required /><br /><br />
+          <label htmlFor="password">Password: </label>
+          <input type="password" id="password" name="password" value={signUpData.password} onChange={handleChange} required />
 
-        <Link to="/Profile" className='submit' aria-label='Submit Button'><button>Submit</button></Link>
-        {/* <button className="SignUp" type="submit">Submit</button> */}
-      </form>
+          <button type="submit" className="submit-button">Sign Up</button>
+        </form>
+        {error && <p className="error-message">{error}</p>}
+        <p>Already have an account? <a href="/login">Log in here</a></p> {/* Always visible */}
+      </div>
     </div>
   );
 }
+
+export default SignUp;

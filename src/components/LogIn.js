@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
-
-export default function LogIn(props) {
+export default function LogIn() {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     email: '',
@@ -34,28 +33,25 @@ export default function LogIn(props) {
   };
 
   return (
-    <div className='background'>
-      <header>
-        <div class="container">
-          <h1>Log In</h1>
-          <p>Welcome back user!</p>
-          <a href="javascript:history.back()" class="back-button">Back</a>
-        </div>
+    <div className='auth-background'>
+      <div className='auth-card'>
+        <header>
+          <div className="auth-container">
+            <h1>Log In</h1>
+            <p>Welcome back user!</p>
+            <button className="back-button" onClick={() => navigate(-1)}>Back</button>
+          </div>
+        </header>
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <label htmlFor="email">Email Address: </label>
+          <input type="email" id="email" name="email" value={loginData.email} onChange={handleChange} required />
 
-      </header>
-      <div className='form'>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email Address: </label>
-        <input type="text" id="email" name="email" value={loginData.email} onChange={handleChange} required /><br /><br />
+          <label htmlFor="password">Password: </label>
+          <input type="password" id="password" name="password" value={loginData.password} onChange={handleChange} required />
 
-        <label htmlFor="password">Password: </label>
-        <input type="password" id="password" name="password" value={loginData.password} onChange={handleChange} required /><br /><br />
-
-        <Link to="/Profile" className='submit' aria-label='Submit Button'><button>Submit</button></Link>
-
-        {/* <button className="login" type="submit">Submit</button> */}
-        <p>Don't have an account? <Link to="/SignUp">Sign up here</Link></p>
-      </form>
+          <button type="submit" className="submit-button">Log In</button>
+          <p>Don't have an account? <Link to="/SignUp">Sign up here</Link></p>
+        </form>
       </div>
     </div>
   );

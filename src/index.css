@@ -25,7 +25,7 @@ main h3 {
     min-height: 100vh;
     margin: 0;
     background-color: rgb(212, 243, 244);
-    
+
 }
 
 
@@ -116,8 +116,8 @@ main h3 {
     flex-direction: row;
     margin: 0;
  }
- 
- 
+
+
  .menu li {
     margin: 0 10px;
     font-size: 1.25rem;
@@ -163,8 +163,8 @@ main h3 {
     margin-right: 15px;
     float: left;
  }
- 
- 
+
+
  .log p,
  h2 {
     margin: 0;
@@ -228,8 +228,8 @@ main h3 {
     margin: 0;
     text-align: left;
  }
- 
- 
+
+
  .alarm p:nth-child(2) {
     font-size: 1.25rem;
 }
@@ -237,8 +237,8 @@ main h3 {
 .alarm p:nth-child(3) {
     font-size: 1rem;
  }
- 
- 
+
+
  .back-button {
     display: inline-block;
     padding: 10px 20px;
@@ -272,39 +272,39 @@ main h3 {
     color: rgb(5, 69, 71);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
- 
- 
+
+
  .profile-picture-container {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    position: relative; 
+    position: relative;
     z-index: 0;
     display: inline-block;
     position: absolute;
     top: 20%;
-    right: 3%; 
-    
+    right: 3%;
 
-    
+
+
  }
- 
- 
+
+
  .t-box {
     size: 5px;
  }
- 
- 
+
+
  .profile-picture-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 1;
  }
- 
- 
+
+
  @media (max-width: 597px) {
      profile-picture-container img {
         width: 10%;
@@ -312,50 +312,50 @@ main h3 {
         object-fit: cover;
         z-index: 1;
         right: 5%;
-     } 
+     }
     .med-form {
         text-align: left;
         display: inline-block;
         font-size: 1.5rem;
     }
- 
- 
+
+
     .med-form label {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
- 
- 
+
+
     .med-form label.med-title {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 2rem;
         color: rgb(5, 69, 71);
     }
- 
- 
+
+
     input[type="text"] {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
- 
- 
+
+
     .med-form .t-box {
         width: 200px;
         height: 35px;
         font-size: 1.5rem;
     }
- 
- 
+
+
     .form-padding {
         padding-bottom: 15px;
     }
- 
- 
+
+
     .bottom-padding {
         padding-bottom: 50px;
     }
- 
- 
+
+
     .med-image {
         display: flex;
         max-height: 200x;
@@ -374,8 +374,8 @@ main h3 {
         flex-wrap: wrap;
         justify-content: center;
     }
- 
- 
+
+
     .day {
         width: 75px;
         height: 100px;
@@ -389,8 +389,8 @@ main h3 {
         border-radius: 20px;
         font-size: 1.5rem;
     }
- 
- 
+
+
     .day-sat {
         color: white;
         background-color: rgb(7, 37, 38);
@@ -412,18 +412,18 @@ main h3 {
         align-items: center;
         /* Add this */
     }
- 
- 
+
+
     .day p {
         margin-top: 70px;
     }
- 
- 
+
+
     .day-sat p {
         margin-top: 70px;
     }
- 
- 
+
+
     .med-date {
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -436,8 +436,8 @@ main h3 {
         padding-bottom: 20px;
     }
 
-   
- 
+
+
     .log {
         flex-basis: calc(33.33% - 1rem);
     }
@@ -466,7 +466,7 @@ main h3 {
         font-size: 1.25rem;
     }
 
-    
+
     .clock {
         display: flex;
         max-width: 100px;
@@ -489,44 +489,44 @@ main h3 {
         font-size: 1.5rem;
         padding-left: 8rem;
     }
- 
- 
+
+
     .med-form label {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
- 
- 
+
+
     .med-form label.med-title {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 2rem;
         color: rgb(5, 69, 71);
     }
- 
- 
+
+
     input[type="text"] {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
- 
- 
+
+
     .med-form .t-box {
         width: 200px;
         height: 35px;
         font-size: 1.5rem;
     }
- 
- 
+
+
     .form-padding {
         padding-bottom: 20px;
     }
- 
- 
+
+
     .bottom-padding {
         padding-bottom: 50px;
     }
- 
- 
+
+
     .med-image {
         max-height: 500px;
         max-width: 500px;
@@ -535,15 +535,15 @@ main h3 {
         top: 20%;
         right: 7%;
     }
- 
- 
+
+
     .calendar {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
- 
- 
+
+
     .day {
         width: 100px;
         height: 200px;
@@ -557,8 +557,8 @@ main h3 {
         border-radius: 20px;
         font-size: 1.5rem;
     }
- 
- 
+
+
     .day-sat {
         color: white;
         background-color: rgb(7, 37, 38);
@@ -574,25 +574,25 @@ main h3 {
         font-size: 1.5rem;
         margin-bottom: 10px;
     }
- 
- 
+
+
     .day p {
         margin-top: 70px;
     }
- 
- 
+
+
     .day-sat p {
         margin-top: 70px;
     }
- 
- 
+
+
     .med-date {
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(5, 69, 71);
     }
- 
- 
+
+
     .log {
         flex-basis: calc(25% - 1rem);
     }
@@ -625,18 +625,107 @@ main h3 {
     .profile-form {
         padding-left: 10px;
     }
- }
- 
- 
- .form{
- padding-top: 150px;
- justify-content: center;
- text-align:  center;
- color: rgb(5, 69, 71);
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- font-size: 1.2rem;
- 
- 
- }
- 
- 
+}
+
+.form{
+padding-top: 150px;
+justify-content: center;
+text-align:  center;
+color: rgb(5, 69, 71);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 1.2rem;
+
+}
+
+/* Specific styles for SignUp and LogIn components */
+.auth-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(212, 243, 244);
+}
+
+.auth-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-container h1 {
+    color: rgb(7, 37, 38);
+    margin-bottom: 10px;
+}
+
+.auth-container p {
+    color: rgb(5, 69, 71);
+    margin-bottom: 20px;
+}
+
+.auth-form {
+    width: 100%;
+}
+
+.auth-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: rgb(5, 69, 71);
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(7, 37, 38);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: rgb(5, 69, 71);
+}
+
+.back-button {
+    background-color: rgb(7, 37, 38);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: rgb(5, 69, 71);
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+  }
+
+  .error-message a {
+    color: blue;
+    text-decoration: underline;
+  }
