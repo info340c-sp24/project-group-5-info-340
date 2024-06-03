@@ -6,12 +6,22 @@ import Footer from './Footer';
 function Home() {
     return (
 
-        <div className="background">
+        <div className='background'>
+
+                <header>
+                <div className="container">
+                    <h1>Home</h1>
+                    <p>Hello User</p>
+                    <a href="javascript:history.back()" className="back-button">Back</a>
+                </div>
+                </header>
+                
             
 
 
+            <main>
                 <div className="consistancy">
-                    <h3>Your Consistency</h3>
+                    <h3>Your Consistancy</h3>
                     <h4>You have taken 50% of your medication!</h4>
                 </div>
 
@@ -45,6 +55,7 @@ function Home() {
                         <p>Hydrocodone 2 tablets</p>
                     </div>
 
+                    {/* Additional Logs */}
                     <div className="log">
                         <img src="image/tablets.png" alt="tablets" />
                         <h2>8:00pm</h2>
@@ -62,12 +73,10 @@ function Home() {
                         <h2>8:45pm</h2>
                         <p>Lisinopril 2 tablets</p>
                     </div>
-
                     <div className="bottom-padding"></div>
                 </section>
+            </main>
 
-                <Footer />
-            
         </div>
     );
 };
