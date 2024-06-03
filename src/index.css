@@ -579,3 +579,96 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-size: 1.2rem;
 
 }
+
+/* Specific styles for SignUp and LogIn components */
+.auth-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(212, 243, 244);
+}
+
+.auth-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-container h1 {
+    color: rgb(7, 37, 38);
+    margin-bottom: 10px;
+}
+
+.auth-container p {
+    color: rgb(5, 69, 71);
+    margin-bottom: 20px;
+}
+
+.auth-form {
+    width: 100%;
+}
+
+.auth-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: rgb(5, 69, 71);
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(7, 37, 38);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: rgb(5, 69, 71);
+}
+
+.back-button {
+    background-color: rgb(7, 37, 38);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: rgb(5, 69, 71);
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+  }
+
+  .error-message a {
+    color: blue;
+    text-decoration: underline;
+  }
