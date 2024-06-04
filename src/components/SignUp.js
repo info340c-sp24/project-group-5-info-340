@@ -4,6 +4,7 @@ import { auth } from '../components/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { getDatabase, ref, set } from 'firebase/database';
 
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [signUpData, setSignUpData] = useState({
@@ -13,6 +14,7 @@ const SignUp = () => {
   });
   const [error, setError] = useState('');
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSignUpData((prevData) => ({
@@ -21,21 +23,25 @@ const SignUp = () => {
     }));
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password, name } = signUpData;
     const db = getDatabase();
     const query = ref(db, "MedLog/User/SignIn");
 
+
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
+
 
       // Write user data to Realtime Database
       await set(ref(db, 'users/' + user.uid), {
         name,
         email,
       });
+
 
       navigate('/Profile'); // Redirect to profile page after successful signup
     } catch (error) {
@@ -46,6 +52,7 @@ const SignUp = () => {
       }
     }
   };
+
 
   return (
     <div className="auth-background">
@@ -61,11 +68,14 @@ const SignUp = () => {
           <label htmlFor="name">Full Name: </label>
           <input type="text" id="name" name="name" value={signUpData.name} onChange={handleChange} required />
 
+
           <label htmlFor="email">Email Address: </label>
           <input type="email" id="email" name="email" value={signUpData.email} onChange={handleChange} required />
 
+
           <label htmlFor="password">Password: </label>
           <input type="password" id="password" name="password" value={signUpData.password} onChange={handleChange} required />
+
 
           <button type="submit" className="submit-button">Sign Up</button>
         </form>
@@ -76,4 +86,8 @@ const SignUp = () => {
   );
 }
 
+
 export default SignUp;
+
+
+

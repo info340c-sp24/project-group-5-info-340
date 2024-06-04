@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Dropdown, DropdownButton } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { getDatabase, ref, push as firebasePush } from 'firebase/database';
 
 
@@ -31,7 +31,7 @@ export default function MedForm(props) {
     const handleChange = (e) => {
         const newValue = e.target.value;
         const filteredData = Data.find(item => item.name.toLowerCase().includes(newValue.toLowerCase()));
-    
+
         if (filteredData) {
           setSearch(filteredData.name);
           setSelectedMedication(filteredData.type);
@@ -75,7 +75,7 @@ export default function MedForm(props) {
 
                     <div className="form-padding">
                         <label className="med-title" htmlFor="strength">Strength:</label><br />
-                        <input className="t-box" type="text" id="strength" name="strength" 
+                        <input className="t-box" type="text" id="strength" name="strength"
                             onChange={(event) =>{
                                 setStrength(event.target.value)
                             }} />
@@ -91,7 +91,7 @@ export default function MedForm(props) {
                             <Dropdown.Item eventKey="%">%</Dropdown.Item>
                         </DropdownButton>
                         <br />
-                        <label className='med-title' htmlFor="unit" 
+                        <label className='med-title' htmlFor="unit"
                             onChange={(event) =>{
                                 setSelectedUnit(event.target.value)
                             }}>Selected Unit: {selectedUnit}</label>
@@ -99,7 +99,7 @@ export default function MedForm(props) {
 
                     <div className="bottom-padding">
                         <label className="med-title" htmlFor="date">Select a date:</label><br />
-                        <input className="t-box" type="date" id="date" name="date" 
+                        <input className="t-box" type="date" id="date" name="date"
                             onChange={(event) =>{
                                 setDate(event.target.value)
                             }} />
@@ -107,7 +107,7 @@ export default function MedForm(props) {
 
                     <div className="bottom-padding">
                         <label className="med-title" htmlFor="time">Select a time:</label><br />
-                        <input className="t-box" type="time" id="time" name="time" 
+                        <input className="t-box" type="time" id="time" name="time"
                             onChange={(event) =>{
                                 setTime(event.target.value)
                             }} /><br /><br />
