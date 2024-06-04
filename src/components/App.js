@@ -18,7 +18,7 @@ import '../index.js';
 export function App(props) {
     return (
         <Router>
-            <div>
+            {/* <div className=''> */}
                 <Header />
                 <Routes>
                     <Route path="/Home" element={<Home />} />
@@ -31,7 +31,7 @@ export function App(props) {
                     <Route path="/" element={<Navigate to="/Login" />} />
                 </Routes>
                 <Footer />
-            </div>
+            {/* </div> */}
         </Router>
     );
 }
