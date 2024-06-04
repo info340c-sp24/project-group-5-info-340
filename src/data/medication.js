@@ -1,5 +1,5 @@
 export const Data = [
-    { "id": 1, "name": "Aspirin" },
+    { "id": 1, "name": "Aspirin" , "type":"tablet"},
     { "id": 2, "name": "Ibuprofen" },
     { "id": 3, "name": "Paracetamol" },
     { "id": 4, "name": "Amoxicillin" },
