@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes, Redirect , Navigate} from 'react-router-dom';
 import Home from './Home.js';
 import Footer from './Footer.js';
@@ -18,7 +17,7 @@ import '../index.js';
 export function App(props) {
     return (
         <Router>
-            <div>
+            {/* <div className=''> */}
                 <Header />
                 <Routes>
                     <Route path="/Home" element={<Home />} />
@@ -31,7 +30,7 @@ export function App(props) {
                     <Route path="/" element={<Navigate to="/Login" />} />
                 </Routes>
                 <Footer />
-            </div>
+            {/* </div> */}
         </Router>
     );
 }

@@ -1,7 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { onValue, ref } from "firebase/database";
+import { getDatabase } from 'firebase/database';
+
 
 export default function MedPage(props) {
+    const db = getDatabase();
+    const [medications, setMedications] = useState([]);
+
+    useEffect(() => {
+        const query = ref(db, "MedLog/User/Medication");
+        console.log(query);
+        return onValue(query, (snapshot) => {
+            const data = snapshot.val();
+            if (snapshot.exists()) {
+                const meds = Object.values(data);
+                setMedications(meds);
+            }
+        });
+    }, []);
+
+    const getImageSrc = (type) => {
+        switch (type) {
+            case 'Liquid':
+                return 'image/liquid.jpg';
+            case 'Injection':
+                return 'image/Injection.png';
+            case 'Capsule':
+                return 'image/capsule.jpg'
+            case 'Inhaler':
+                return 'image/inhaler.jpg'
+            case 'Ointment':
+                return 'image/ointment.jpg'
+            case 'Cream':
+                return 'image/cream.jpg'
+            case 'Tablet':
+                return 'image/tablets.png'
+        }
+
+    };
     return (
         <div className='background'>
 
@@ -11,7 +49,6 @@ export default function MedPage(props) {
             </div>
 
             <main>
-                {/* Calendar */}
                 <div>
                     <h1 className="med-date">Saturday April 20</h1>
                     <div className="calendar">
@@ -44,33 +81,21 @@ export default function MedPage(props) {
                     <Link to="/MedlogForm" className="add-alarm" aria-label="Add Medication">
                         <button>+</button>
                     </Link>
-                </div> 
+                </div>
 
                 {/* Current Medication */}
                 <div>
                     <h3>Your Medications</h3>
                     <section className="column">
                         <div>
-                            <div className="log">
-                                <img src="image/liquid.jpg" alt="liquid" />
-                                <h2>10:00am</h2>
-                                <p>Omeprazole 5mg liquid</p>
-                            </div>
-                            <div className="log">
-                                <img src="image/Injection.png" alt="Injection" />
-                                <h2>3:00pm</h2>
-                                <p>Morphine 5mg Injection</p>
-                            </div>
-                            <div className="log">
-                                <img src="image/capsule.jpg" alt="capsule" />
-                                <h2>5:00pm</h2>
-                                <p>Tylenol 1 capsule</p>
-                            </div>
-                            <div className="log">
-                                <img src="image/tablets.png" alt="tablets" />
-                                <h2>8:00pm</h2>
-                                <p>Hydrocodone 2 tablets</p>
-                            </div>
+                            {medications.map((medication, index) => (
+
+                                <div className="log" key={index}>
+                                    <img src={getImageSrc(medication.medicationType)} alt={medication.medicationType} />
+                                    <h2>{medication.medicationTime}</h2>
+                                    <p>{`${medication.medicationName} ${medication.medicationStrength}${medication.medicationAmtType} ${medication.medicationType}`}</p>
+                                </div>
+                            ))}
                         </div>
                     </section>
                 </div>
