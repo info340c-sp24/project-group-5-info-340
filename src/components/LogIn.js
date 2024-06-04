@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getDatabase, ref, set, push } from 'firebase/database';
 
 export default function LogIn() {
   const navigate = useNavigate();
@@ -21,13 +22,32 @@ export default function LogIn() {
     e.preventDefault();
     const auth = getAuth();
     const { email, password } = loginData;
+    const db = getDatabase();
+    const loginRef = ref(db, "MedLog/User/Login");
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        // Log the login attempt in the Realtime Database
+        const newLoginRef = push(loginRef);
+        set(newLoginRef, {
+          email: email,
+          timestamp: Date.now(),
+          status: 'success'
+        });
+
         // Logged in successfully
         navigate('/Profile');
       })
       .catch((error) => {
+        // Log the failed login attempt in the Realtime Database
+        const newLoginRef = push(loginRef);
+        set(newLoginRef, {
+          email: email,
+          timestamp: Date.now(),
+          status: 'failure',
+          error: error.message
+        });
+
         alert(error.message);
       });
   };

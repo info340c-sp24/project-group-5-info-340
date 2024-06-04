@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../components/firebaseConfig';
+import { auth } from '../components/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { getDatabase, ref, set } from 'firebase/database';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -24,22 +24,21 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password, name } = signUpData;
+    const db = getDatabase();
+    const query = ref(db, "MedLog/User/SignIn");
 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      console.log('User created:', user);
 
-      await setDoc(doc(db, 'users', user.uid), {
+      // Write user data to Realtime Database
+      await set(ref(db, 'users/' + user.uid), {
         name,
         email,
       });
 
-      console.log('User document created in Firestore');
       navigate('/Profile'); // Redirect to profile page after successful signup
     } catch (error) {
-      console.error('Error during signup:', error);
-
       if (error.code === 'auth/email-already-in-use') {
         setError('This email address is already in use.');
       } else {
@@ -71,7 +70,7 @@ const SignUp = () => {
           <button type="submit" className="submit-button">Sign Up</button>
         </form>
         {error && <p className="error-message">{error}</p>}
-        <p>Already have an account? <a href="/login">Log in here</a></p> {/* Always visible */}
+        <p>Already have an account? <a href="/login">Log in here</a></p>
       </div>
     </div>
   );
