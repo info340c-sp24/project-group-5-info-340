@@ -1,9 +1,45 @@
 import React, { useState } from 'react';
-import { Data } from '../data/medication';
+import { Button, Dropdown, DropdownButton } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { getDatabase, ref, push as firebasePush } from 'firebase/database';
 
 
 export default function MedForm(props) {
-    const [search, setSearch] = useState('')
+    const Data = props.data
+
+    // Testing Database from Firebase
+    const db = getDatabase();
+    const formRef = ref(db, 'MedLog/User/Medication');
+
+    // Getting the different values
+    const [search, setSearch] = useState('');
+    const [selectedMedication, setSelectedMedication] = useState('');
+    const [strength, setStrength] = useState('');
+    const [time, setTime] = useState('');
+    const [date, setDate] = useState('');
+    const [selectedUnit, setSelectedUnit] = useState('');
+
+    // Handle consts
+    const handleSubmit = () => {
+        firebasePush(formRef, {medicationAmtType: selectedUnit, medicationName: search, medicationTime: time, medicationDate: date, medicationStrength: strength, medicationType: selectedMedication})
+    }
+
+    const handleSelect = (eventKey) => {
+        setSelectedUnit(eventKey);
+    };
+
+    const handleChange = (e) => {
+        const newValue = e.target.value;
+        const filteredData = Data.find(item => item.name.toLowerCase().includes(newValue.toLowerCase()));
+    
+        if (filteredData) {
+          setSearch(filteredData.name);
+          setSelectedMedication(filteredData.type);
+        } else {
+          setSearch('');
+          setSelectedMedication('');
+        }
+    }
 
     return (
         <div className='background'>
@@ -18,65 +54,64 @@ export default function MedForm(props) {
                 <form className="med-form">
 
                     <div className='form-padding'>
-                    <label className="med-title" htmlFor="mname">Medication Name:</label><br />
-                    <input className='t-box' type="text" placeholder='Search...' list="meds" onChange={(e) => setSearch(e.target.value)} />
-                        <datalist id="meds">
-                            {Data.filter(medication => medication.name.toLowerCase().includes(search)).map(medication => (
-                                <option key={medication.id} value={medication.name}>{medication.name}</option>
-                            ))}
-                        </datalist>
+                        <label className="med-title" htmlFor="mname">Medication Name:</label><br />
+                        <input className='t-box' type="text" placeholder='Search...' list="meds" onChange={handleChange} />
+                            <datalist id="meds">
+                                {Data.filter(medication => medication.name.toLowerCase().includes(search)).map(medication => (
+                                    <option key={medication.id} value={medication.name}>{medication.name}</option>
+                                ))}
+                            </datalist>
                     </div>
 
                     <div className="form-padding">
-                        <label className="med-title" htmlFor="mtype">Type of Medication:</label><br />
-                        <input type="radio" id="liquid" name="mtype" value="liquid" />
-                        <label htmlFor="liquid">Liquid</label><br />
-                        <input type="radio" id="tablet" name="mtype" value="tablet" />
-                        <label htmlFor="tablet">Tablet</label><br />
-                        <input type="radio" id="capsule" name="mtype" value="capsule" />
-                        <label htmlFor="capsule">Capsule</label><br />
-                        <input type="radio" id="topical" name="mtype" value="topical" />
-                        <label htmlFor="topical">Topical</label><br />
-                        <input type="radio" id="suppository" name="mtype" value="suppository" />
-                        <label htmlFor="suppository">Suppository</label><br />
-                        <input type="radio" id="patch" name="mtype" value="patch" />
-                        <label htmlFor="patch">Patch</label><br />
-                        <input type="radio" id="cream" name="mtype" value="cream" />
-                        <label htmlFor="cream">Cream</label><br />
-                        <input type="radio" id="device" name="mtype" value="device" />
-                        <label htmlFor="device">Device</label><br />
-                        <input type="radio" id="injection" name="mtype" value="injection" />
-                        <label htmlFor="injection">Injection</label><br />
-                        <input type="radio" id="inhaler" name="mtype" value="inhaler" />
-                        <label htmlFor="inhaler">Inhaler</label><br />
-                        <input type="radio" id="ointment" name="mtype" value="ointment" />
-                        <label htmlFor="ointment">Ointment</label><br />
-                        <input type="radio" id="powder" name="mtype" value="powder" />
-                        <label htmlFor="powder">Powder</label><br />
-                        <input type="radio" id="drops" name="mtype" value="drops" />
-                        <label htmlFor="drops">Drops</label>
+                                <label className="med-title" htmlFor="mtype">Type of Medication:</label><br />
+                                <input
+                                    className='t-box'
+                                    type="text"
+                                    value={selectedMedication}
+                                    readOnly
+                                />
                     </div>
+
                     <div className="form-padding">
                         <label className="med-title" htmlFor="strength">Strength:</label><br />
-                        <input className="t-box" type="text" id="strength" name="strength" />
+                        <input className="t-box" type="text" id="strength" name="strength" 
+                            onChange={(event) =>{
+                                setStrength(event.target.value)
+                            }} />
                     </div>
+
                     <div className="form-padding">
                         <label className="med-title" htmlFor="unit">Choose Unit:</label><br />
-                        <input type="radio" id="mg" name="unit" value="mg" />
-                        <label htmlFor="mg">mg</label><br />
-                        <input type="radio" id="mcg" name="unit" value="mcg" />
-                        <label htmlFor="mcg">mcg</label><br />
-                        <input type="radio" id="g" name="unit" value="g" />
-                        <label htmlFor="g">g</label><br />
-                        <input type="radio" id="ml" name="unit" value="ml" />
-                        <label htmlFor="ml">ml</label><br />
-                        <input type="radio" id="%" name="unit" value="%" />
-                        <label htmlFor="%">%</label>
+                        <DropdownButton id="dropdown-basic" title="Select Unit" onSelect={handleSelect}>
+                            <Dropdown.Item  eventKey="mg">mg</Dropdown.Item>
+                            <Dropdown.Item eventKey="mcg">mcg</Dropdown.Item>
+                            <Dropdown.Item eventKey="g">g</Dropdown.Item>
+                            <Dropdown.Item eventKey="ml">ml</Dropdown.Item>
+                            <Dropdown.Item eventKey="%">%</Dropdown.Item>
+                        </DropdownButton>
+                        <br />
+                        <label className='med-title' htmlFor="unit" 
+                            onChange={(event) =>{
+                                setSelectedUnit(event.target.value)
+                            }}>Selected Unit: {selectedUnit}</label>
                     </div>
+
+                    <div className="bottom-padding">
+                        <label className="med-title" htmlFor="date">Select a date:</label><br />
+                        <input className="t-box" type="date" id="date" name="date" 
+                            onChange={(event) =>{
+                                setDate(event.target.value)
+                            }} />
+                    </div>
+
                     <div className="bottom-padding">
                         <label className="med-title" htmlFor="time">Select a time:</label><br />
-                        <input className="t-box" type="time" id="time" name="time" /><br /><br />
-                        <input className="t-box" type="submit" value="Submit" /><br /><br />
+                        <input className="t-box" type="time" id="time" name="time" 
+                            onChange={(event) =>{
+                                setTime(event.target.value)
+                            }} /><br /><br />
+                        <Button onClick={handleSubmit} type="submit">Submit</Button>{' '}<br /><br />
                     </div>
                 </form>
 
@@ -86,6 +121,5 @@ export default function MedForm(props) {
                 </div>
             </main>
         </div>
-        )
+    )
 }
-
