@@ -10,7 +10,7 @@ import Login from './LogIn.js';
 import SignUp from './SignUp.js';
 import MedForm from './MedlogForm.js';
 import Profile from './Profile.js';
-
+import MED_DATA from '../data/medication.json'
 
 import '../index.js';
 
@@ -26,7 +26,7 @@ export function App(props) {
                     <Route path="/Alarm" element={<Alarm />} />
                     <Route path="/LogIn" element={<Login />} />
                     <Route path="/SignUp" element={<SignUp />} />
-                    <Route path="/MedlogForm" element={<MedForm />} />
+                    <Route path="/MedlogForm" element={<MedForm data={MED_DATA} />} />
                     <Route path="/Profile" element={<Profile />} />
                     <Route path="/" element={<Navigate to="/Login" />} />
                 </Routes>
